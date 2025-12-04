@@ -145,16 +145,21 @@ employment-system/
 ## User Roles & Permissions
 
 ### Admin
+- **No public registration** - Admin accounts created via seed data only
 - View all users, jobs, and applications
+- Change user roles (admin/employer/job_seeker)
 - Delete inappropriate jobs
+- Update application status
 - Filter users by role
 
 ### Employer
+- Register and login
 - Create, update, delete own jobs
 - View applications for own jobs
 - Accept/reject applications
 
 ### Job Seeker
+- Register and login
 - Browse and search jobs
 - Apply for jobs
 - View own applications

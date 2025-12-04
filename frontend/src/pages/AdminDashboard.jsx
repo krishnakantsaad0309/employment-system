@@ -58,6 +58,15 @@ const AdminDashboard = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-8 px-4">
             <div className="max-w-7xl mx-auto">
+                <button
+                    onClick={() => navigate(-1)}
+                    className="mb-4 flex items-center text-gray-700 hover:text-gray-900 font-medium transition-colors"
+                >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back
+                </button>
                 {/* Header */}
                 <div className="mb-8">
                     <h1 className="text-4xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>

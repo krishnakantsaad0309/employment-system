@@ -7,7 +7,7 @@ const registerSchema = Joi.object({
     name: Joi.string().required(),
     email: Joi.string().email().required(),
     password: Joi.string().min(6).required(),
-    role: Joi.string().valid('admin', 'employer', 'job_seeker').required(),
+    role: Joi.string().valid('employer', 'job_seeker').required(),
 });
 
 const loginSchema = Joi.object({
@@ -25,6 +25,11 @@ const registerUser = async (req, res) => {
     }
 
     const { name, email, password, role } = req.body;
+
+    // Prevent admin registration through public endpoint
+    if (role === 'admin') {
+        return res.status(403).json({ message: 'Cannot register as admin' });
+    }
 
     try {
         const userExists = await User.findOne({ email });

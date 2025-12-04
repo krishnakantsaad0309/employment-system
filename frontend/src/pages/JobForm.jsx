@@ -24,9 +24,20 @@ const JobForm = () => {
     };
 
     return (
-        <div className="p-4 max-w-2xl mx-auto bg-white rounded shadow mt-10">
-            <h1 className="text-2xl font-bold mb-6">Post a New Job</h1>
-            <form onSubmit={submitHandler}>
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
+            <div className="max-w-2xl mx-auto">
+                <button
+                    onClick={() => navigate(-1)}
+                    className="mb-4 flex items-center text-gray-700 hover:text-gray-900 font-medium transition-colors"
+                >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back
+                </button>
+                <div className="bg-white rounded-lg shadow-xl p-8">
+                    <h1 className="text-3xl font-bold mb-6 text-gray-900">Post a New Job</h1>
+                    <form onSubmit={submitHandler}>
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2">Job Title</label>
                     <input
@@ -69,14 +80,16 @@ const JobForm = () => {
                         <option value="Internship">Internship</option>
                     </select>
                 </div>
-                <button
-                    type="submit"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    disabled={isLoading}
-                >
-                    {isLoading ? 'Posting...' : 'Post Job'}
-                </button>
-            </form>
+                        <button
+                            type="submit"
+                            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition hover:scale-105 disabled:opacity-50"
+                            disabled={isLoading}
+                        >
+                            {isLoading ? 'Posting...' : 'Post Job'}
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     );
 };
